@@ -28,6 +28,7 @@ function reset() {
         document.getElementById("px").className = "col-6 bg-success";
         document.getElementById("po").className = "col-6 bg-white";
         document.getElementById("winner").innerHTML = ""
+        state =0
     }
 }
 var scorex = 0
