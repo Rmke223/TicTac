@@ -27,7 +27,18 @@ function reset() {
         cells[i].innerHTML = ""
         document.getElementById("px").className = "col-6 bg-white";
         document.getElementById("po").className = "col-6 bg-white";
+        document.getElementById("winner").innerHTML = ""
     }
+}
+var scorex = 0
+function scoreX(){
+    scorex += 1
+    document.getElementById("sx").innerHTML = scorex
+}
+var scoreo = 0
+function scoreO(){
+    scoreo += 1
+    document.getElementById("so").innerHTML = scoreo
 }
 
 function checkWin() {
@@ -40,56 +51,126 @@ function checkWin() {
     var c7 = document.getElementById("t7").innerHTML
     var c8 = document.getElementById("t8").innerHTML
     var c9 = document.getElementById("t9").innerHTML
+    var cellb = document.getElementsByClassName("cell")
+
     if (c9 == "x" && c8 == "x" && c7 == "x") {
-        alert("Player x has won");
-        reset()
+        for (var i = 0; i < cellb.length; i++) {
+            cellb[i].removeAttribute('onclick')
+        }
+        document.getElementById("winner").innerHTML = "Player X has won!"
+        scoreX()
     }
     else if (c6 == "x" && c5 == "x" && c4 == "x") {
-        alert("Player x has won");
+        for (var i = 0; i < cellb.length; i++) {
+            cellb[i].removeAttribute('onclick')
+        }
+        document.getElementById("winner").innerHTML = "Player X has won!"
+        scoreX()
     }
     else if (c1 == "x" && c2 == "x" && c3 == "x") {
-        alert("Player x has won");
+        for (var i = 0; i < cellb.length; i++) {
+            cellb[i].removeAttribute('onclick')
+        }
+        document.getElementById("winner").innerHTML = "Player X has won!"
+        scoreX()
     }
     else if (c1 == "x" && c4 == "x" && c7 == "x") {
-        alert("Player x has won");
+        for (var i = 0; i < cellb.length; i++) {
+            cellb[i].removeAttribute('onclick')
+        }
+        document.getElementById("winner").innerHTML = "Player X has won!"
+        scoreX()
     }
     else if (c2 == "x" && c5 == "x" && c8 == "x") {
-        alert("Player x has won");
+        for (var i = 0; i < cellb.length; i++) {
+            cellb[i].removeAttribute('onclick')
+        }
+        document.getElementById("winner").innerHTML = "Player X has won!"
+        scoreX()
     }
     else if (c3 == "x" && c6 == "x" && c9 == "x") {
-        alert("Player x has won");
+        for (var i = 0; i < cellb.length; i++) {
+            cellb[i].removeAttribute('onclick')
+        }
+        document.getElementById("winner").innerHTML = "Player X has won!"
+        scoreX()
     }
-    else if(c1=="x" && c5 =="x" && c9=="x"){
-        alert("Player x has won");
+    else if (c1 == "x" && c5 == "x" && c9 == "x") {
+        for (var i = 0; i < cellb.length; i++) {
+            cellb[i].removeAttribute('onclick')
+        }
+        document.getElementById("winner").innerHTML = "Player X has won!"
+        scoreX()
     }
-    else if(c3=="x" && c5 =="x" && c7=="x"){
-        alert("Player x has won");
+    else if (c3 == "x" && c5 == "x" && c7 == "x") {
+        for (var i = 0; i < cellb.length; i++) {
+            cellb[i].removeAttribute('onclick')
+        }
+        document.getElementById("winner").innerHTML = "Player X has won!"
+        scoreX()
     }
-    else if(c9 == "o" && c8 == "o" && c7 == "o"){
-        alert("Player o has won");
+    else if (c9 == "o" && c8 == "o" && c7 == "o") {
+        for (var i = 0; i < cellb.length; i++) {
+            cellb[i].removeAttribute('onclick')
+        }
+        document.getElementById("winner").innerHTML = "Player O has won!"
+        scoreO()
     }
     else if (c6 == "o" && c5 == "o" && c4 == "o") {
-        alert("Player o has won");
+        for (var i = 0; i < cellb.length; i++) {
+            cellb[i].removeAttribute('onclick')
+        }
+        document.getElementById("winner").innerHTML = "Player O has won!"
+        scoreO()
     }
     else if (c1 == "o" && c2 == "o" && c3 == "o") {
-        alert("Player o has won");
+        for (var i = 0; i < cellb.length; i++) {
+            cellb[i].removeAttribute('onclick')
+        }
+        document.getElementById("winner").innerHTML = "Player O has won!"
+        scoreO()
     }
     else if (c1 == "o" && c4 == "o" && c7 == "o") {
-        alert("Player o has won");
+        for (var i = 0; i < cellb.length; i++) {
+            cellb[i].removeAttribute('onclick')
+        }
+        document.getElementById("winner").innerHTML = "Player O has won!"
+        scoreO()
     }
     else if (c2 == "o" && c5 == "o" && c8 == "o") {
-        alert("Player o has won");
+        for (var i = 0; i < cellb.length; i++) {
+            cellb[i].removeAttribute('onclick')
+        }
+        document.getElementById("winner").innerHTML = "Player O has won!"
+        scoreO()
     }
     else if (c3 == "o" && c6 == "o" && c9 == "o") {
-        alert("Player o has won");
+        for (var i = 0; i < cellb.length; i++) {
+            cellb[i].removeAttribute('onclick')
+        }
+        document.getElementById("winner").innerHTML = "Player O has won!"
+        scoreO()
     }
-    else if(c1=="o" && c5 =="o" && c9=="o"){
-        alert("Player o has won");
+    else if (c1 == "o" && c5 == "o" && c9 == "o") {
+        for (var i = 0; i < cellb.length; i++) {
+            cellb[i].removeAttribute('onclick')
+        }
+        document.getElementById("winner").innerHTML = "Player O has won!"
+        scoreO()
     }
-    else if(c3=="o" && c5 =="o" && c7=="o"){
-        alert("Player o has won");
+    else if (c3 == "o" && c5 == "o" && c7 == "o") {
+        for (var i = 0; i < cellb.length; i++) {
+            cellb[i].removeAttribute('onclick')
+        }
+        document.getElementById("winner").innerHTML = "Player O has won!"
+        scoreO()
     }
-    else if((c1=="x" || c1=="o") && (c2=="x" || c2=="o") && (c3=="x" || c3=="o") && (c4=="x" || c4=="o") && (c5=="x" || c5=="o") && (c6=="x" || c6=="o") && (c7=="x" || c7=="o") && (c8=="x" || c8=="o") && (c9=="x" || c9=="o")){
-        alert("Tie!")
+    else if ((c1 == "x" || c1 == "o") && (c2 == "x" || c2 == "o") && (c3 == "x" || c3 == "o") && (c4 == "x" || c4 == "o") && (c5 == "x" || c5 == "o") && (c6 == "x" || c6 == "o") && (c7 == "x" || c7 == "o") && (c8 == "x" || c8 == "o") && (c9 == "x" || c9 == "o")) {
+        for (var i = 0; i < cellb.length; i++) {
+            cellb[i].removeAttribute('onclick')
+        }
+        document.getElementById("winner").innerHTML = "Player O has won!"
+        scoreO()
     }
+
 }
