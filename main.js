@@ -25,7 +25,7 @@ function reset() {
     for (var i = 0; i < cells.length; i++) {
         cells[i].setAttribute("onclick", "clicker(this.id)")
         cells[i].innerHTML = ""
-        document.getElementById("px").className = "col-6 bg-white";
+        document.getElementById("px").className = "col-6 bg-success";
         document.getElementById("po").className = "col-6 bg-white";
         document.getElementById("winner").innerHTML = ""
     }
