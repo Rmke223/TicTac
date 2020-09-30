@@ -169,8 +169,8 @@ function checkWin() {
         for (var i = 0; i < cellb.length; i++) {
             cellb[i].removeAttribute('onclick')
         }
-        document.getElementById("winner").innerHTML = "Player O has won!"
-        scoreO()
+        document.getElementById("winner").innerHTML = "Tie Game"
+   
     }
 
 }
