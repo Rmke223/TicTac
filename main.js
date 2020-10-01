@@ -10,7 +10,7 @@ function init() {
     players.setAttribute('class', "row")
     currentDiv.appendChild(players);
     var playerX = document.createElement("div");
-    playerX.setAttribute('class', 'col-4 mx-auto')
+    playerX.setAttribute('class', 'col-4 mx-auto bg-success')
     playerX.setAttribute('id', 'px')
     playerX.innerText = "Player X"
     players.appendChild(playerX);
@@ -56,7 +56,7 @@ function init() {
         col.setAttribute("id", [i])
         col.setAttribute("style", "height: 150px;")
         col.setAttribute("onclick", "clicker(this.id);")
-        col.innerText = "reee"
+        col.innerText = ""
         row.appendChild(col);
     }
     const btn = document.createElement("button");
