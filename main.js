@@ -1,3 +1,72 @@
+
+
+function init() {
+    const currentDiv = document.getElementById("main");
+    const h1 = document.createElement("h1");
+    h1.setAttribute("class", "text-center");
+    h1.innerText = "Tic Tac Toe";
+    currentDiv.appendChild(h1);
+    const players = document.createElement("div");
+    players.setAttribute('class', "row")
+    currentDiv.appendChild(players);
+    var playerX = document.createElement("div");
+    playerX.setAttribute('class', 'col-4 mx-auto')
+    playerX.setAttribute('id', 'px')
+    playerX.innerText = "Player X"
+    players.appendChild(playerX);
+    var playerO = document.createElement("div");
+    playerO.setAttribute('class', 'col-4 mx-auto')
+    playerO.setAttribute('id', 'po')
+    playerO.innerText = "Player 0"
+    players.appendChild(playerO);
+    const scores = document.createElement("div");
+    scores.setAttribute('class', "row")
+    currentDiv.appendChild(scores);
+    var scoreX = document.createElement("div");
+    scoreX.setAttribute('class', 'col-4 mx-auto')
+    scoreX.setAttribute('id','sx')
+    scoreX.innerText = 0
+    scores.appendChild(scoreX);
+    var scoreO = document.createElement("div");
+    scoreO.setAttribute('class', 'col-4 mx-auto')
+    scoreO.setAttribute('id','so')
+    scoreO.innerText = 0
+    scores.appendChild(scoreO);
+    const winners = document.createElement('div')
+    winners.setAttribute('class', "row")
+    currentDiv.appendChild(winners);
+    var winner = document.createElement('div')
+    winner.setAttribute('class', 'col text-center')
+    winner.setAttribute('id', 'winner')
+    winners.appendChild(winner)
+
+
+
+
+    const board = document.createElement("div");
+    board.setAttribute("class", "container-fluid border");
+    currentDiv.appendChild(board);
+    const row = document.createElement("div");
+    row.setAttribute('class', 'row');
+    board.appendChild(row);
+
+    for (i = 1; i < 10; i++) {
+        const col = document.createElement("div");
+        col.setAttribute('class', 'cell col-4 bg-success border');
+        col.setAttribute("id", [i])
+        col.setAttribute("style", "height: 150px;")
+        col.setAttribute("onclick", "clicker(this.id);")
+        col.innerText = "reee"
+        row.appendChild(col);
+    }
+    const btn = document.createElement("button");
+    btn.setAttribute('class', 'bg-success')
+    btn.innerHTML = "Reset"
+    btn.setAttribute("onclick", "reset();")
+    currentDiv.appendChild(btn);
+}
+
+
 var state = 0
 function clicker(id) {
     if (state == 0) {
@@ -7,8 +76,6 @@ function clicker(id) {
         document.getElementById("po").className = "col-6 bg-success";
         document.getElementById("px").className = "col-6 bg-white";
         checkWin()
-
-
     }
     else {
         state -= 1
@@ -17,9 +84,9 @@ function clicker(id) {
         document.getElementById("px").className = "col-6 bg-success";
         document.getElementById("po").className = "col-6 bg-white";
         checkWin()
-
     }
 }
+
 function reset() {
     var cells = document.getElementsByClassName("cell")
     for (var i = 0; i < cells.length; i++) {
@@ -28,7 +95,7 @@ function reset() {
         document.getElementById("px").className = "col-6 bg-success";
         document.getElementById("po").className = "col-6 bg-white";
         document.getElementById("winner").innerHTML = ""
-        state =0
+        state = 0
     }
 }
 var scorex = 0
@@ -41,17 +108,16 @@ function scoreO(){
     scoreo += 1
     document.getElementById("so").innerHTML = scoreo
 }
-
 function checkWin() {
-    var c1 = document.getElementById("t1").innerHTML
-    var c2 = document.getElementById("t2").innerHTML
-    var c3 = document.getElementById("t3").innerHTML
-    var c4 = document.getElementById("t4").innerHTML
-    var c5 = document.getElementById("t5").innerHTML
-    var c6 = document.getElementById("t6").innerHTML
-    var c7 = document.getElementById("t7").innerHTML
-    var c8 = document.getElementById("t8").innerHTML
-    var c9 = document.getElementById("t9").innerHTML
+    var c1 = document.getElementById("1").innerHTML
+    var c2 = document.getElementById("2").innerHTML
+    var c3 = document.getElementById("3").innerHTML
+    var c4 = document.getElementById("4").innerHTML
+    var c5 = document.getElementById("5").innerHTML
+    var c6 = document.getElementById("6").innerHTML
+    var c7 = document.getElementById("7").innerHTML
+    var c8 = document.getElementById("8").innerHTML
+    var c9 = document.getElementById("9").innerHTML
     var cellb = document.getElementsByClassName("cell")
 
     if (c9 == "x" && c8 == "x" && c7 == "x") {
@@ -171,7 +237,6 @@ function checkWin() {
             cellb[i].removeAttribute('onclick')
         }
         document.getElementById("winner").innerHTML = "Tie Game"
-   
-    }
 
+    }
 }
