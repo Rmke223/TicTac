@@ -13,59 +13,14 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="./theme.css">
     <script src="https://kit.fontawesome.com/d59df2d2d1.js" crossorigin="anonymous"></script>
-    <script src="main.js"></script>
+   
 
 </head>
 
-<body>
-    <div id="header" class="cont">
-        <div class="row text-center">
-            <div class="col">
-                <p>Tic Tac Toe</p>
-            </div>
-        </div>
-    </div>
-
-    <div class="contain">
-        <div class="row text-center">
-            <div id="px" class="col-6 bg-success">Player X</div>
-            <div id="po" class="col-6">Player O</div>
-        </div>
-    </div>
-    <div class="contain">
-        <div class="row text-center">
-            <div id="sx" class="col-6">0</div>
-            <div id="so" class="col-6">0</div>
-        </div>
-    </div>
-    <div class="text-center">
-        <h1 id="winner"></h1>
-    </div>
-
-    <div id="main" class="container pt-4">
-        <div class="row text-center">
-            <div id="t1" class="cell col-4 border" style="height:150px;" onclick="clicker(this.id);"></div>
-            <div id="t2" class="cell col-4 border" onclick="clicker(this.id);"></div>
-            <div id="t3" class="cell col-4 border" onclick="clicker(this.id);"></div>
-
-            <div id="t4" class="cell col-4 border" style="height:150px;" onclick="clicker(this.id);"></div>
-            <div id="t5" class="cell col-4 border" onclick="clicker(this.id);"></div>
-            <div id="t6" class="cell col-4 border" onclick="clicker(this.id);"></div>
- 
-
-        <div id="t7" class="cell col-4 border" style="height:150px;" onclick="clicker(this.id);"></div>
-        <div id="t8" class="cell col-4 border" onclick="clicker(this.id);"></div>
-        <div id="t9" class="cell col-4 border" onclick="clicker(this.id);"></div>
-    </div>
-    </div>
-
-    <div class="cont pt-4">
-        <div class="row text-center">
-            <div class="col">
-                <button onclick="reset()">Reset</button>
-            </div>
-        </div>
-    </div>
+<body onload="init()">
+<div id="main" class="container text-center">
+    
+</div>
 
 </body>
 <!-- Optional JavaScript -->
@@ -79,6 +34,7 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
     integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
     crossorigin="anonymous"></script>
+    <script src="main.js"></script>
 </body>
 
 </html>
