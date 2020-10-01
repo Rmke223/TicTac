@@ -64,6 +64,16 @@ function init() {
     btn.innerHTML = "Reset"
     btn.setAttribute("onclick", "reset();")
     currentDiv.appendChild(btn);
+
+    const brk = document.createElement("br")
+    currentDiv.appendChild(brk);
+
+
+    const btn2 = document.createElement("button");
+    btn2.setAttribute('class', 'bg-success')
+    btn2.innerHTML = "Reset Scores"
+    btn2.setAttribute("onclick", "resetscore();")
+    currentDiv.appendChild(btn2);
 }
 
 
@@ -99,6 +109,7 @@ function reset() {
     }
 }
 var scorex = 0
+var scoreo = 0
 function scoreX(){
     scorex += 1
     document.getElementById("sx").innerHTML = scorex
@@ -107,6 +118,14 @@ var scoreo = 0
 function scoreO(){
     scoreo += 1
     document.getElementById("so").innerHTML = scoreo
+}
+function resetscore(){
+    scorex = 0
+    document.getElementById("sx").innerHTML = 0
+    score0 = 0
+    document.getElementById("so").innerHTML = 0
+
+
 }
 function checkWin() {
     var c1 = document.getElementById("1").innerHTML
