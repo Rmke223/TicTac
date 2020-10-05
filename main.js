@@ -162,119 +162,119 @@ function checkWin() {
     var c9 = document.getElementById("9").src
     var cellb = document.getElementsByClassName("cell")
 
-    if (c9.search("good") == 26 && c8.search("good") == 26 && c7.search("good") == 26) {
+    if (c9.search("good") == 37 && c8.search("good") == 37 && c7.search("good") == 37) {
         for (var i = 0; i < cellb.length; i++) {
             cellb[i].removeAttribute('onclick')
         }
         document.getElementById("winner").innerHTML = "Good guys won!"
         scoreX()
     }
-    else if (c6.search("good") == 26 && c5.search("good") == 26 && c4.search("good") == 26) {
+    else if (c6.search("good") == 37 && c5.search("good") == 37 && c4.search("good") == 37) {
         for (var i = 0; i < cellb.length; i++) {
             cellb[i].removeAttribute('onclick')
         }
         document.getElementById("winner").innerHTML = "Good guys won!"
         scoreX()
     }
-    else if (c3.search("good") == 26 && c2.search("good") == 26 && c1.search("good") == 26) {
+    else if (c3.search("good") == 37 && c2.search("good") == 37 && c1.search("good") == 37) {
         for (var i = 0; i < cellb.length; i++) {
             cellb[i].removeAttribute('onclick')
         }
         document.getElementById("winner").innerHTML = "Good guys won!"
         scoreX()
     }
-    else if (c1.search("good") == 26 && c4.search("good") == 26 && c7.search("good") == 26) {
+    else if (c1.search("good") == 37 && c4.search("good") == 37 && c7.search("good") == 37) {
         for (var i = 0; i < cellb.length; i++) {
             cellb[i].removeAttribute('onclick')
         }
         document.getElementById("winner").innerHTML = "Good guys won!"
         scoreX()
     }
-    else if (c2.search("good") == 26 && c5.search("good") == 26 && c8.search("good") == 26) {
+    else if (c2.search("good") == 37 && c5.search("good") == 37 && c8.search("good") == 37) {
         for (var i = 0; i < cellb.length; i++) {
             cellb[i].removeAttribute('onclick')
         }
         document.getElementById("winner").innerHTML = "Good guys won!"
         scoreX()
     }
-    else if (c3.search("good") == 26 && c6.search("good") == 26 && c9.search("good") == 26) {
+    else if (c3.search("good") == 37 && c6.search("good") == 37 && c9.search("good") == 37) {
         for (var i = 0; i < cellb.length; i++) {
             cellb[i].removeAttribute('onclick')
         }
         document.getElementById("winner").innerHTML = "Good guys won!"
         scoreX()
     }
-    else if (c9.search("good") == 26 && c5.search("good") == 26 && c1.search("good") == 26) {
+    else if (c9.search("good") == 37 && c5.search("good") == 37 && c1.search("good") == 37) {
         for (var i = 0; i < cellb.length; i++) {
             cellb[i].removeAttribute('onclick')
         }
         document.getElementById("winner").innerHTML = "Good guys won!"
         scoreX()
     }
-    else if (c3.search("good") == 26 && c5.search("good") == 26 && c7.search("good") == 26) {
+    else if (c3.search("good") == 37 && c5.search("good") == 37 && c7.search("good") == 37) {
         for (var i = 0; i < cellb.length; i++) {
             cellb[i].removeAttribute('onclick')
         }
         document.getElementById("winner").innerHTML = "Good guys won!"
         scoreX()
     }
-    else if (c9.search("bad") == 26 && c8.search("bad") == 26 && c7.search("bad") == 26) {
+    else if (c9.search("bad") == 37 && c8.search("bad") == 37 && c7.search("bad") == 37) {
         for (var i = 0; i < cellb.length; i++) {
             cellb[i].removeAttribute('onclick')
         }
         document.getElementById("winner").innerHTML = "Bad guys won!"
         scoreO()
     }
-    else if (c6.search("bad") == 26 && c5.search("bad") == 26 && c4.search("bad") == 26) {
+    else if (c6.search("bad") == 37 && c5.search("bad") == 37 && c4.search("bad") == 37) {
         for (var i = 0; i < cellb.length; i++) {
             cellb[i].removeAttribute('onclick')
         }
         document.getElementById("winner").innerHTML = "Bad guys won!"
         scoreO()
     }
-    else if (c1.search("bad") == 26 && c2.search("bad") == 26 && c3.search("bad") == 26) {
+    else if (c1.search("bad") == 37 && c2.search("bad") == 37 && c3.search("bad") == 37) {
         for (var i = 0; i < cellb.length; i++) {
             cellb[i].removeAttribute('onclick')
         }
         document.getElementById("winner").innerHTML = "Bad guys won!"
         scoreO()
     }
-    else if (c1.search("bad") == 26 && c4.search("bad") == 26 && c7.search("bad") == 26) {
+    else if (c1.search("bad") == 37 && c4.search("bad") == 37 && c7.search("bad") == 37) {
         for (var i = 0; i < cellb.length; i++) {
             cellb[i].removeAttribute('onclick')
         }
         document.getElementById("winner").innerHTML = "Bad guys won!"
         scoreO()
     }
-    else if (c2.search("bad") == 26 && c8.search("bad") == 26 && c5.search("bad") == 26) {
+    else if (c2.search("bad") == 37 && c8.search("bad") == 37 && c5.search("bad") == 37) {
         for (var i = 0; i < cellb.length; i++) {
             cellb[i].removeAttribute('onclick')
         }
         document.getElementById("winner").innerHTML = "Bad guys won!"
         scoreO()
     }
-    else if (c9.search("bad") == 26 && c3.search("bad") == 26 && c6.search("bad") == 26) {
+    else if (c9.search("bad") == 37 && c3.search("bad") == 37 && c6.search("bad") == 37) {
         for (var i = 0; i < cellb.length; i++) {
             cellb[i].removeAttribute('onclick')
         }
         document.getElementById("winner").innerHTML = "Bad guys won!"
         scoreO()
     }
-    else if (c9.search("bad") == 26 && c5.search("bad") == 26 && c1.search("bad") == 26) {
+    else if (c9.search("bad") == 37 && c5.search("bad") == 37 && c1.search("bad") == 37) {
         for (var i = 0; i < cellb.length; i++) {
             cellb[i].removeAttribute('onclick')
         }
         document.getElementById("winner").innerHTML = "Bad guys won!"
         scoreO()
     }
-    else if (c3.search("bad") == 26 && c5.search("bad") == 26 && c7.search("bad") == 26) {
+    else if (c3.search("bad") == 37 && c5.search("bad") == 37 && c7.search("bad") == 37) {
         for (var i = 0; i < cellb.length; i++) {
             cellb[i].removeAttribute('onclick')
         }
         document.getElementById("winner").innerHTML = "Bad guys won!"
         scoreO()
     }
-    else if ((c1.search("good")==26 || c1.search("bad")==26) && (c2.search("good")==26 || c2.search("bad")==26) && (c3.search("good")==26 || c3.search("bad")==26) && (c4.search("good")==26 || c4.search("bad")==26) && (c5.search("good")==26 || c5.search("bad")==26) && (c6.search("good")==26 || c6.search("bad")==26) && (c7.search("good")==26 || c7.search("bad")==26) && (c8.search("good")==26 || c8.search("bad")==26) && (c9.search("good")==26 || c9.search("bad")==26)) {
+    else if ((c1.search("good")==37 || c1.search("bad")==37) && (c2.search("good")==37 || c2.search("bad")==37) && (c3.search("good")==37 || c3.search("bad")==37) && (c4.search("good")==37 || c4.search("bad")==37) && (c5.search("good")==37 || c5.search("bad")==37) && (c6.search("good")==37 || c6.search("bad")==37) && (c7.search("good")==37 || c7.search("bad")==37) && (c8.search("good")==37 || c8.search("bad")==37) && (c9.search("good")==37 || c9.search("bad")==37)) {
         for (var i = 0; i < cellb.length; i++) {
             cellb[i].removeAttribute('onclick')
         }
