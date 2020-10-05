@@ -1,7 +1,6 @@
-
-
 function init() {
     const currentDiv = document.getElementById("main");
+    currentDiv.setAttribute("class","container-fluid bg-primary text-center text-white");
     const h1 = document.createElement("h1");
     h1.setAttribute("class", "text-center");
     h1.innerText = "Tic Tac Toe";
@@ -10,14 +9,14 @@ function init() {
     players.setAttribute('class', "row")
     currentDiv.appendChild(players);
     var playerX = document.createElement("div");
-    playerX.setAttribute('class', 'col-4 mx-auto bg-success')
+    playerX.setAttribute('class', 'col-6 bg-success')
     playerX.setAttribute('id', 'px')
-    playerX.innerText = "Player X"
+    playerX.innerText = "Good Guys"
     players.appendChild(playerX);
     var playerO = document.createElement("div");
-    playerO.setAttribute('class', 'col-4 mx-auto')
+    playerO.setAttribute('class', 'col-6')
     playerO.setAttribute('id', 'po')
-    playerO.innerText = "Player 0"
+    playerO.innerText = "Bad Guys"
     players.appendChild(playerO);
     const scores = document.createElement("div");
     scores.setAttribute('class', "row")
@@ -39,25 +38,20 @@ function init() {
     winner.setAttribute('class', 'col text-center')
     winner.setAttribute('id', 'winner')
     winners.appendChild(winner)
-
-
-
-
-    const board = document.createElement("div");
-    board.setAttribute("class", "container-fluid border");
-    currentDiv.appendChild(board);
     const row = document.createElement("div");
     row.setAttribute('class', 'row');
-    board.appendChild(row);
+    currentDiv.appendChild(row);
 
     for (i = 1; i < 10; i++) {
-        const col = document.createElement("div");
+        const col = document.createElement("img");
         col.setAttribute('class', 'cell col-4 bg-success border');
         col.setAttribute("id", [i])
-        col.setAttribute("style", "height: 150px;")
+        col.setAttribute("style", "")
         col.setAttribute("onclick", "clicker(this.id);")
-        col.innerText = ""
+        col.setAttribute("src", "./img/blank.png");
+        
         row.appendChild(col);
+    
     }
     const btn = document.createElement("button");
     btn.setAttribute('class', 'bg-success')
@@ -68,31 +62,55 @@ function init() {
     const brk = document.createElement("br")
     currentDiv.appendChild(brk);
 
+    const btn4 = document.createElement("button");
+    btn4.setAttribute('class', 'bg-success')
+    btn4.innerHTML = "Reset Scores"
+    btn4.setAttribute("onclick", "resetscore();")
+    currentDiv.appendChild(btn4);
 
-    const btn2 = document.createElement("button");
-    btn2.setAttribute('class', 'bg-success')
-    btn2.innerHTML = "Reset Scores"
-    btn2.setAttribute("onclick", "resetscore();")
-    currentDiv.appendChild(btn2);
+    const brk2 = document.createElement("br")
+    currentDiv.appendChild(brk2);
+
+    const btn3 = document.createElement("button");
+    btn3.setAttribute('class', 'bg-success')
+    btn3.innerHTML = "Play as Ian"
+    btn3.setAttribute("onclick", "changeGood();")
+    currentDiv.appendChild(btn3);
+    const btn5 = document.createElement("button");
+    btn5.setAttribute('class', 'bg-success')
+    btn5.innerHTML = "Play as Justin"
+    btn5.setAttribute("onclick", "changeGood2();")
+    currentDiv.appendChild(btn5);
+
+
+}
+var goodSrc = "./img/good1.png"
+function changeGood(){
+    goodSrc = "./img/good2.png"
+    return goodSrc
+}
+function changeGood2(){
+    goodSrc = "./img/good1.png"
+    return goodSrc
 }
 
 
-var state = 0
+ var state = 0
 function clicker(id) {
     if (state == 0) {
         state += 1
-        document.getElementById(id).innerHTML = "x"
+        document.getElementById(id).setAttribute ("src",goodSrc)
         document.getElementById(id).removeAttribute('onclick')
         document.getElementById("po").className = "col-6 bg-success";
-        document.getElementById("px").className = "col-6 bg-white";
+        document.getElementById("px").className = "col-6 bg-white text-primary";
         checkWin()
     }
     else {
         state -= 1
-        document.getElementById(id).innerHTML = "o"
+        document.getElementById(id).setAttribute ("src","./img/bad1.png")
         document.getElementById(id).removeAttribute('onclick')
         document.getElementById("px").className = "col-6 bg-success";
-        document.getElementById("po").className = "col-6 bg-white";
+        document.getElementById("po").className = "col-6 bg-white text-primary";
         checkWin()
     }
 }
@@ -101,13 +119,14 @@ function reset() {
     var cells = document.getElementsByClassName("cell")
     for (var i = 0; i < cells.length; i++) {
         cells[i].setAttribute("onclick", "clicker(this.id)")
-        cells[i].innerHTML = ""
+        cells[i].setAttribute("src", "./img/blank.png");
         document.getElementById("px").className = "col-6 bg-success";
-        document.getElementById("po").className = "col-6 bg-white";
+        document.getElementById("po").className = "col-6 bg-white text-primary";
         document.getElementById("winner").innerHTML = ""
         state = 0
     }
 }
+
 var scorex = 0
 var scoreo = 0
 function scoreX(){
@@ -127,131 +146,135 @@ function resetscore(){
 
 
 }
+
 function checkWin() {
-    var c1 = document.getElementById("1").innerHTML
-    var c2 = document.getElementById("2").innerHTML
-    var c3 = document.getElementById("3").innerHTML
-    var c4 = document.getElementById("4").innerHTML
-    var c5 = document.getElementById("5").innerHTML
-    var c6 = document.getElementById("6").innerHTML
-    var c7 = document.getElementById("7").innerHTML
-    var c8 = document.getElementById("8").innerHTML
-    var c9 = document.getElementById("9").innerHTML
+    var c1 = document.getElementById("1").src
+    console.log(c1)
+    console.log(c1.search("bad"))
+
+    var c2 = document.getElementById("2").src
+    var c3 = document.getElementById("3").src
+    var c4 = document.getElementById("4").src
+    var c5 = document.getElementById("5").src
+    var c6 = document.getElementById("6").src
+    var c7 = document.getElementById("7").src
+    var c8 = document.getElementById("8").src
+    var c9 = document.getElementById("9").src
     var cellb = document.getElementsByClassName("cell")
 
-    if (c9 == "x" && c8 == "x" && c7 == "x") {
+    if (c9.search("good") == 26 && c8.search("good") == 26 && c7.search("good") == 26) {
         for (var i = 0; i < cellb.length; i++) {
             cellb[i].removeAttribute('onclick')
         }
-        document.getElementById("winner").innerHTML = "Player X has won!"
+        document.getElementById("winner").innerHTML = "Good guys won!"
         scoreX()
     }
-    else if (c6 == "x" && c5 == "x" && c4 == "x") {
+    else if (c6.search("good") == 26 && c5.search("good") == 26 && c4.search("good") == 26) {
         for (var i = 0; i < cellb.length; i++) {
             cellb[i].removeAttribute('onclick')
         }
-        document.getElementById("winner").innerHTML = "Player X has won!"
+        document.getElementById("winner").innerHTML = "Good guys won!"
         scoreX()
     }
-    else if (c1 == "x" && c2 == "x" && c3 == "x") {
+    else if (c3.search("good") == 26 && c2.search("good") == 26 && c1.search("good") == 26) {
         for (var i = 0; i < cellb.length; i++) {
             cellb[i].removeAttribute('onclick')
         }
-        document.getElementById("winner").innerHTML = "Player X has won!"
+        document.getElementById("winner").innerHTML = "Good guys won!"
         scoreX()
     }
-    else if (c1 == "x" && c4 == "x" && c7 == "x") {
+    else if (c1.search("good") == 26 && c4.search("good") == 26 && c7.search("good") == 26) {
         for (var i = 0; i < cellb.length; i++) {
             cellb[i].removeAttribute('onclick')
         }
-        document.getElementById("winner").innerHTML = "Player X has won!"
+        document.getElementById("winner").innerHTML = "Good guys won!"
         scoreX()
     }
-    else if (c2 == "x" && c5 == "x" && c8 == "x") {
+    else if (c2.search("good") == 26 && c5.search("good") == 26 && c8.search("good") == 26) {
         for (var i = 0; i < cellb.length; i++) {
             cellb[i].removeAttribute('onclick')
         }
-        document.getElementById("winner").innerHTML = "Player X has won!"
+        document.getElementById("winner").innerHTML = "Good guys won!"
         scoreX()
     }
-    else if (c3 == "x" && c6 == "x" && c9 == "x") {
+    else if (c3.search("good") == 26 && c6.search("good") == 26 && c9.search("good") == 26) {
         for (var i = 0; i < cellb.length; i++) {
             cellb[i].removeAttribute('onclick')
         }
-        document.getElementById("winner").innerHTML = "Player X has won!"
+        document.getElementById("winner").innerHTML = "Good guys won!"
         scoreX()
     }
-    else if (c1 == "x" && c5 == "x" && c9 == "x") {
+    else if (c9.search("good") == 26 && c5.search("good") == 26 && c1.search("good") == 26) {
         for (var i = 0; i < cellb.length; i++) {
             cellb[i].removeAttribute('onclick')
         }
-        document.getElementById("winner").innerHTML = "Player X has won!"
+        document.getElementById("winner").innerHTML = "Good guys won!"
         scoreX()
     }
-    else if (c3 == "x" && c5 == "x" && c7 == "x") {
+    else if (c3.search("good") == 26 && c5.search("good") == 26 && c7.search("good") == 26) {
         for (var i = 0; i < cellb.length; i++) {
             cellb[i].removeAttribute('onclick')
         }
-        document.getElementById("winner").innerHTML = "Player X has won!"
+        document.getElementById("winner").innerHTML = "Good guys won!"
         scoreX()
     }
-    else if (c9 == "o" && c8 == "o" && c7 == "o") {
+    else if (c9.search("bad") == 26 && c8.search("bad") == 26 && c7.search("bad") == 26) {
         for (var i = 0; i < cellb.length; i++) {
             cellb[i].removeAttribute('onclick')
         }
-        document.getElementById("winner").innerHTML = "Player O has won!"
+        document.getElementById("winner").innerHTML = "Bad guys won!"
         scoreO()
     }
-    else if (c6 == "o" && c5 == "o" && c4 == "o") {
+    else if (c6.search("bad") == 26 && c5.search("bad") == 26 && c4.search("bad") == 26) {
         for (var i = 0; i < cellb.length; i++) {
             cellb[i].removeAttribute('onclick')
         }
-        document.getElementById("winner").innerHTML = "Player O has won!"
+        document.getElementById("winner").innerHTML = "Bad guys won!"
         scoreO()
     }
-    else if (c1 == "o" && c2 == "o" && c3 == "o") {
+    else if (c1.search("bad") == 26 && c2.search("bad") == 26 && c3.search("bad") == 26) {
         for (var i = 0; i < cellb.length; i++) {
             cellb[i].removeAttribute('onclick')
         }
-        document.getElementById("winner").innerHTML = "Player O has won!"
+        document.getElementById("winner").innerHTML = "Bad guys won!"
         scoreO()
     }
-    else if (c1 == "o" && c4 == "o" && c7 == "o") {
+    else if (c1.search("bad") == 26 && c4.search("bad") == 26 && c7.search("bad") == 26) {
         for (var i = 0; i < cellb.length; i++) {
             cellb[i].removeAttribute('onclick')
         }
-        document.getElementById("winner").innerHTML = "Player O has won!"
+        document.getElementById("winner").innerHTML = "Bad guys won!"
         scoreO()
     }
-    else if (c2 == "o" && c5 == "o" && c8 == "o") {
+    else if (c2.search("bad") == 26 && c8.search("bad") == 26 && c5.search("bad") == 26) {
         for (var i = 0; i < cellb.length; i++) {
             cellb[i].removeAttribute('onclick')
         }
-        document.getElementById("winner").innerHTML = "Player O has won!"
+        document.getElementById("winner").innerHTML = "Bad guys won!"
         scoreO()
     }
-    else if (c3 == "o" && c6 == "o" && c9 == "o") {
+    else if (c9.search("bad") == 26 && c3.search("bad") == 26 && c6.search("bad") == 26) {
         for (var i = 0; i < cellb.length; i++) {
             cellb[i].removeAttribute('onclick')
         }
-        document.getElementById("winner").innerHTML = "Player O has won!"
+        document.getElementById("winner").innerHTML = "Bad guys won!"
         scoreO()
     }
-    else if (c1 == "o" && c5 == "o" && c9 == "o") {
+    else if (c9.search("bad") == 26 && c5.search("bad") == 26 && c1.search("bad") == 26) {
         for (var i = 0; i < cellb.length; i++) {
             cellb[i].removeAttribute('onclick')
         }
-        document.getElementById("winner").innerHTML = "Player O has won!"
+        document.getElementById("winner").innerHTML = "Bad guys won!"
         scoreO()
     }
-    else if (c3 == "o" && c5 == "o" && c7 == "o") {
+    else if (c3.search("bad") == 26 && c5.search("bad") == 26 && c7.search("bad") == 26) {
         for (var i = 0; i < cellb.length; i++) {
             cellb[i].removeAttribute('onclick')
         }
-        document.getElementById("winner").innerHTML = "Player O has won!"
+        document.getElementById("winner").innerHTML = "Bad guys won!"
         scoreO()
     }
-    else if ((c1 == "x" || c1 == "o") && (c2 == "x" || c2 == "o") && (c3 == "x" || c3 == "o") && (c4 == "x" || c4 == "o") && (c5 == "x" || c5 == "o") && (c6 == "x" || c6 == "o") && (c7 == "x" || c7 == "o") && (c8 == "x" || c8 == "o") && (c9 == "x" || c9 == "o")) {
+    else if ((c1.search("good")==26 || c1.search("bad")==26) && (c2.search("good")==26 || c2.search("bad")==26) && (c3.search("good")==26 || c3.search("bad")==26) && (c4.search("good")==26 || c4.search("bad")==26) && (c5.search("good")==26 || c5.search("bad")==26) && (c6.search("good")==26 || c6.search("bad")==26) && (c7.search("good")==26 || c7.search("bad")==26) && (c8.search("good")==26 || c8.search("bad")==26) && (c9.search("good")==26 || c9.search("bad")==26)) {
         for (var i = 0; i < cellb.length; i++) {
             cellb[i].removeAttribute('onclick')
         }
@@ -259,3 +282,4 @@ function checkWin() {
 
     }
 }
+
