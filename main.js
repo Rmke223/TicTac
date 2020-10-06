@@ -106,7 +106,11 @@ function init() {
     btn7.innerHTML = "Play as Josh"
     btn7.setAttribute("onclick", "changeGood3();")
     currentDiv.appendChild(btn7);
-
+    const btn8 = document.createElement("button");
+    btn8.setAttribute('class', 'bg-success')
+    btn8.innerHTML = "Play as Nick"
+    btn8.setAttribute("onclick", "changeGood4();")
+    currentDiv.appendChild(btn8);
 
 }
 var goodSrc = "./img/good1.png"
@@ -120,6 +124,10 @@ function changeGood2(){
 }
 function changeGood3(){
     goodSrc = "./img/good3.png"
+    return goodSrc
+}
+function changeGood4(){
+    goodSrc = "./img/good4.png"
     return goodSrc
 }
 
