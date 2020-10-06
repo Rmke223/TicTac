@@ -1,3 +1,16 @@
+const makeElement = (tag, className, id, innerText = "") => {
+    let element = document.createElement(tag);
+    element.setAttribute('class', className);
+    element.setAttribute('id', id);
+    element.innerText = innerText;
+    return element;
+}
+
+const divs = [
+    { player: "X", tag: "div", class: "col-6 bg-success", id: "px", text: "Good Guys" },
+    { player: "O", tag: "div", class: "col-6", id: "po", text: "Bad Guys" },
+]
+
 function init() {
     const currentDiv = document.getElementById("main");
     currentDiv.setAttribute("class","container-fluid bg-primary text-center text-white");
@@ -8,16 +21,23 @@ function init() {
     const players = document.createElement("div");
     players.setAttribute('class', "row")
     currentDiv.appendChild(players);
-    var playerX = document.createElement("div");
-    playerX.setAttribute('class', 'col-6 bg-success')
-    playerX.setAttribute('id', 'px')
-    playerX.innerText = "Good Guys"
-    players.appendChild(playerX);
-    var playerO = document.createElement("div");
-    playerO.setAttribute('class', 'col-6')
-    playerO.setAttribute('id', 'po')
-    playerO.innerText = "Bad Guys"
-    players.appendChild(playerO);
+    // var playerX = document.createElement("div");
+    // playerX.setAttribute('class', 'col-6 bg-success')
+    // playerX.setAttribute('id', 'px')
+    // playerX.innerText = "Good Guys"
+    // const playerX = makeElement("div", "col-6 bg-success", "px", "Good Guys");
+    // players.appendChild(playerX);
+    // const playerO = makeElement("div", "col-6", "po", "Bad Guys");
+    // players.appendChild(playerO);
+
+    divs.map((item, idx) => {
+        let div = makeElement(item.tag, item.class, item.id, item.text);
+        players.appendChild(div);
+    })
+    // var playerO = document.createElement("div");
+    // playerO.setAttribute('class', 'col-6')
+    // playerO.setAttribute('id', 'po')
+    // playerO.innerText = "Bad Guys"
     const scores = document.createElement("div");
     scores.setAttribute('class', "row")
     currentDiv.appendChild(scores);
@@ -81,6 +101,11 @@ function init() {
     btn5.innerHTML = "Play as Justin"
     btn5.setAttribute("onclick", "changeGood2();")
     currentDiv.appendChild(btn5);
+    const btn7 = document.createElement("button");
+    btn7.setAttribute('class', 'bg-success')
+    btn7.innerHTML = "Play as Josh"
+    btn7.setAttribute("onclick", "changeGood3();")
+    currentDiv.appendChild(btn7);
 
 
 }
@@ -91,6 +116,10 @@ function changeGood(){
 }
 function changeGood2(){
     goodSrc = "./img/good1.png"
+    return goodSrc
+}
+function changeGood3(){
+    goodSrc = "./img/good3.png"
     return goodSrc
 }
 
